@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 class Product(models.Model):
-    title       = models.TextField()
-    description = models.TextField()
+    title       = models.CharField(max_length=120) # max_length = required
+    description = models.TextField(blank=True, null=True)
     price       = models.TextField()
     summary      = models.TextField(default='this is cool')
