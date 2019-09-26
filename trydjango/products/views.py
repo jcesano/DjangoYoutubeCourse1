@@ -1,9 +1,15 @@
 from django.http import Http404
 from django.shortcuts import render, get_object_or_404, redirect
 from .forms import ProductForm, RawProductForm
+from django.views.generic import ListView
 from .models import Product 
+from .models import TransactionHeader
 
 # Create your views here.
+
+class TransactionHeaderListView(ListView):
+    model = TransactionHeader
+
 def product_list_view(request):
     queryset = Product.objects.all() # list of objects
     context = {

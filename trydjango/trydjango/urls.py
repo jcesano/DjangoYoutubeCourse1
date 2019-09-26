@@ -22,7 +22,8 @@ from products.views import (
     render_initial_data,
     dynamic_lookup_view,
     product_delete_view,
-    product_list_view
+    product_list_view,
+    TransactionHeaderListView
     )
 
 urlpatterns = [
@@ -36,4 +37,5 @@ urlpatterns = [
     path('product/', product_detail_view),
     path('create/', render_initial_data),
     path('admin/', admin.site.urls),
+    path('transaction_list/', TransactionHeaderListView.as_view()),
 ]
